@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Review</title>
+<!--Bootstrap CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--Loading styles.css -->
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+  
+  <div class="jumbotron" id="musJum"><!--start musJum -->
+    <h1>Music Reviews</h1>
+    <p>"Love forever love is free, Let's turn forever you and me" - ?</p>
+    <p id="navbar">
+      <span><a href="about.html">About</a></span> 
+      <span><a href="../index.html">Home</a></span> 
+      <span><a href="movieReviews.html">Movies</a></span> 
+    </p>
+  </div><!--end musJum -->
+
+<!--the container for data handlebars -->
+  <div id="music-list-container" class="col-xs-12"><!--start musCon--> 
+  
+<!--music review template -->
+  <script id="music-template" type="text/x-handlebars-template">
+    {{#each music}}
+      <div id="music-info" class="music"><!--start template strucuture --> 
+        <h2>{{reviewNumber}} | {{album}}</h2>
+        <h3>By <a href="#">{{artist}}</a></h3>
+        <h4>My Rating : <i>{{rating}}</i></h4>
+        <h2>My personal favorites: <b>{{favTracks}}</b></h2>
+        <div id="reviewBox">
+          <p id="myReview">{{{review}}}</p>
+        </div>
+        <p><a href="{{src}}">Link for the music</a> | {{date}}</p>
+      </div><!--end template struciture -->
+    {{/each}}  
+  </script>
+
+<!---Loading the js srcs -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="../js/handlebars-v4.0.11.js"></script>
+  <script src="../js/musicReviews.js"></script>
+</body>
+</html>

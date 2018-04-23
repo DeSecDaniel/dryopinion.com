@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Reviews</title>
+<!--Bootstrap CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--Loading styles.css -->
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+  <div class="jumbotron" id="movJum">
+    <h1>Movie Reviews</h1>
+    <p>"Are you out of your vulcan mind" - ?</p>
+    <p id="navbar">
+      <span><a href="about.html">About</a></span> 
+      <span><a href="../index.html">Home</a></span> 
+      <span><a href="musicReviews.html">Music</a></span> 
+    </p>
+  </div>
+
+  <div id="movie-list-container" class="col-xs-12"></div>
+<!--movie review template -->
+  <script id="movie-template" type="text/x-handlebars-template">
+    {{#each movies}}
+      <div id="movie-info" class="movie">
+        <h2>{{reviewNumber}} | {{title}}</h2>
+        <h3><a href="#">{{dicteror}}</a> directed the flick</h3>
+        <h4>My Rating : <i>{{rating}}</i></h4>
+        <div id="reviewBox">
+          <p id="myReview">{{{review}}}</p>
+        </div>
+        <p><a href="{{src}}">Movie Trailer</a> | {{date}}</p>
+      </div>
+    {{/each}} 
+  </script>
+<!---Loading the js srcs -->
+<!--loading handlebar.js -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="../js/handlebars-v4.0.11.js"></script>
+  <script src="../js/movieReviews.js"></script>
+</body>
+</html>
